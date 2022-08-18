@@ -35,6 +35,15 @@ class prize {
     rigth() {
       return this.x + this.height;
     }
+
+    getPrizes(trophie) {
+        return !(
+          this.bottom() < ball.top() ||
+          this.top() > ball.bottom() ||
+          this.rigth() < ball.left() ||
+          this.left() > ball.rigth()
+        );
+      }
 }
 
 function createTrophie() {
@@ -47,7 +56,7 @@ function createTrophie() {
   }
   
   function updateTrophie() {
-    if (myGameArea.score === 10) {
+    if (myGameArea.score % 10 === 0 && myGameArea.score != 0) {
       createTrophie();
     }
   

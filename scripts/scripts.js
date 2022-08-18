@@ -7,6 +7,7 @@ const myGameArea = {
   stop: false,
   player: null,
   score: 0,
+  prizes: 0,
   start: function () {
     this.player = new Component(290, 340, 35, 35, "green");
     this.canvas.width = 580;
@@ -19,11 +20,11 @@ const myGameArea = {
   clear: function () {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   },
-  // getPoints: function () {
-    // this.context.font = "18px sherif";
-    // this.context.fillStyle = "black";
-    // this.context.fillText(`Score: ${score}`, 420, 50);
-  // },
+  getPoints: function () {
+    this.context.font = "18px sherif";
+    this.context.fillStyle = "black";
+    this.context.fillText(`Score: ${this.score}`, 420, 50);
+  },
 };
 
 function updateGameArea() {
@@ -35,8 +36,10 @@ function updateGameArea() {
   updateTrophie();
 
   myGameArea.frames += 1;
+  myGameArea.getPoints();
   checkGameOver();
   checkPoints();
+  checkPrizes();
   if (!myGameArea.stop) {
     requestAnimationFrame(updateGameArea);
   }
@@ -55,9 +58,19 @@ function checkPoints() {
   myGameArea.balls.forEach((ball, index) => {
     const crashed = myGameArea.player.crashWith(ball);
     if (crashed) {
-        console.log('Verificar');
       myGameArea.balls.splice(index, 1);
       myGameArea.score += 1;
+    }
+  });
+}
+
+function checkPrizes() {
+  myGameArea.trophies.forEach((trophie, index) => {
+    const crashed = myGameArea.player.crashWith(trophie);
+    if (crashed) {
+      console.log("Verificar");
+      myGameArea.trophies.splice(index, 1);
+      myGameArea.prizes += 1;
     }
   });
 }
