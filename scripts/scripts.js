@@ -9,7 +9,7 @@ const myGameArea = {
   score: 0,
   prizes: 0,
   start: function () {
-    this.player = new Component(290, 340, 35, 35, "green");
+    this.player = new Component(290, 340, 35, 35, "green", "./images/brasil.png");
     this.canvas.width = 580;
     this.canvas.height = 370;
     this.context = this.canvas.getContext("2d");
@@ -25,6 +25,11 @@ const myGameArea = {
     this.context.fillStyle = "black";
     this.context.fillText(`Score: ${this.score}`, 420, 50);
   },
+  getTrophies: function () {
+    this.context.font = "18px sherif";
+    this.context.fillStyle = "black";
+    this.context.fillText(`Trophies: ${this.trophies}`, 320, 50);
+  }
 };
 
 function updateGameArea() {
@@ -33,7 +38,7 @@ function updateGameArea() {
   myGameArea.player.draw();
   updateObstacle();
   updateBall();
-  updateTrophie();
+  updateTrophy();
 
   myGameArea.frames += 1;
   myGameArea.getPoints();
@@ -65,10 +70,9 @@ function checkPoints() {
 }
 
 function checkPrizes() {
-  myGameArea.trophies.forEach((trophie, index) => {
-    const crashed = myGameArea.player.crashWith(trophie);
+  myGameArea.trophies.forEach((trophy, index) => {
+    const crashed = myGameArea.player.crashWith(trophy);
     if (crashed) {
-      console.log("Verificar");
       myGameArea.trophies.splice(index, 1);
       myGameArea.prizes += 1;
     }

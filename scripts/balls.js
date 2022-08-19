@@ -3,7 +3,7 @@ function createBall() {
     let height = 35;
     let width = 35;
     let randomX = Math.floor(Math.random() * (myGameArea.canvas.width - width));
-    let newBall = new Component(randomX, 0, width, height, "blue");
+    let newBall = new Component(randomX, 0, width, height, "blue", "./images/bola.png");
     myGameArea.balls.push(newBall);
   }
   

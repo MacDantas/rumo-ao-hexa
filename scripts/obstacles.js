@@ -3,7 +3,7 @@ function createObstacle() {
     let height = 35;
     let width = 35;
     let randomX = Math.floor(Math.random() * (myGameArea.canvas.width - width));
-    let newObstacle = new Component(randomX, 0, width, height, "red");
+    let newObstacle = new Component(randomX, 0, width, height, "red", "./images/argentina.png");
     myGameArea.obstacles.push(newObstacle);
   }
 
