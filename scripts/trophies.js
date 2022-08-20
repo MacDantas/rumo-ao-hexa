@@ -57,7 +57,7 @@ function createTrophy() {
   }
   
   function updateTrophy() {
-    if (myGameArea.trophies.length === 0 && myGameArea.score % 3 === 0 && myGameArea.score != 0) {
+    if (myGameArea.trophies.length === 0 && myGameArea.score % 10 === 0 && myGameArea.score != 0) {
       createTrophy();
     }
   

@@ -23,12 +23,12 @@ const myGameArea = {
   getPoints: function () {
     this.context.font = "18px sherif";
     this.context.fillStyle = "black";
-    this.context.fillText(`Score: ${this.score}`, 420, 50);
+    this.context.fillText(`Score: ${this.score}`, 510, 30);
   },
   getTrophies: function () {
     this.context.font = "18px sherif";
     this.context.fillStyle = "black";
-    this.context.fillText(`Trophies: ${this.prizes}`, 320, 50);
+    this.context.fillText(`Trophies: ${this.prizes}`, 410, 30);
   }
 };
 
@@ -86,7 +86,7 @@ function checkPrizes() {
 }
 
 function checkWin(){
-  if (myGameArea.prizes === 1){
+  if (myGameArea.prizes === 6){
     myGameArea.clear();
     myGameArea.context.font = "40px sherif";
     myGameArea.context.fillStyle = "black";

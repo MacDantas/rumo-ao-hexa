@@ -11,13 +11,19 @@ document.addEventListener("keydown", (e) => {
         }
         break;
       case "ArrowDown":
+        if (myGameArea.player.y <= 335){
         myGameArea.player.speedY += 1;
+        }
         break;
       case "ArrowLeft":
+        if (myGameArea.player.x >= 10){
         myGameArea.player.speedX -= 1;
+        }
         break;
       case "ArrowRight":
+        if (myGameArea.player.x <= 545){
         myGameArea.player.speedX += 1;
+        }
         break;
     }
   });

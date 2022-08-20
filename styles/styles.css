@@ -11,6 +11,6 @@ body{
 }
 
 canvas{
-    background-color: rgb(177, 244, 177);
+    background-image: url("../images/campo.png");
     border: 2px solid black;
 }
