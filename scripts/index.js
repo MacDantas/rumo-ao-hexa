@@ -6,7 +6,9 @@ document.addEventListener("keydown", (e) => {
     const key = e.code;
     switch (key) {
       case "ArrowUp":
-        myGameArea.player.speedY -= 1;
+        if (myGameArea.player.y >= 10){
+          myGameArea.player.speedY -= 1;
+        }
         break;
       case "ArrowDown":
         myGameArea.player.speedY += 1;

@@ -13,17 +13,14 @@ class Component {
 
   draw() {
     const ctx = myGameArea.context;
-    // if (this.color !== "blue") {
-      // ctx.fillStyle = this.color;
-      // ctx.fillRect(this.x, this.y, this.width, this.height);
-    //} else {
       ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-    //}
   }
 
   newPos() {
-    this.x += this.speedX;
-    this.y += this.speedY;
+    if (this.x >= 10 && this.x < 580 - this.width && this.y > -10 && this.y <= 335){
+      this.x += this.speedX;
+      this.y += this.speedY;
+    }
   }
 
   top() {

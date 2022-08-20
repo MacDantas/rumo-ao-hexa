@@ -65,4 +65,7 @@ function createTrophy() {
       trophy.y += 1;
       trophy.draw();
     }
+
+    myGameArea.trophies = myGameArea.trophies.filter((trophy) => trophy.x > 0 + trophy.width);
+
   }

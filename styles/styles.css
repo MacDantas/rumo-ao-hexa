@@ -1,0 +1,13 @@
+body{
+    color: white;
+    font-size: large;
+    background-image: url("../images/logotipo.jpeg");
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+canvas{
+    background-color: rgb(177, 244, 177);
+    border: 2px solid black;
+}
